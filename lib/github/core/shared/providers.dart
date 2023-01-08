@@ -1,5 +1,3 @@
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:github_repo_viewer/core/shared/providers.dart';
 import 'package:github_repo_viewer/github/core/infrastructure/github_headers_cache.dart';
 import 'package:github_repo_viewer/github/detail/application/repo_detail_notifier.dart';
 import 'package:github_repo_viewer/github/detail/infrastructure/repo_detail_local_service.dart';
@@ -13,6 +11,8 @@ import 'package:github_repo_viewer/github/repos/starred_repos/application/starre
 import 'package:github_repo_viewer/github/repos/starred_repos/infrastructure/starred_repos_local_service.dart';
 import 'package:github_repo_viewer/github/repos/starred_repos/infrastructure/starred_repos_remote_service.dart';
 import 'package:github_repo_viewer/github/repos/starred_repos/infrastructure/starred_repos_repository.dart';
+import 'package:github_repo_viewer/main/shared/providers.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final githubHeadersCacheProvider = Provider(
   (ref) => GithubHeadersCache(ref.watch(sembastProvider)),

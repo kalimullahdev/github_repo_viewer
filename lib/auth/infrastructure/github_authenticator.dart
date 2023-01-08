@@ -1,12 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/services.dart';
-import 'package:http/http.dart' as http;
-import 'package:oauth2/oauth2.dart';
 import 'package:github_repo_viewer/auth/domain/auth_failure.dart';
 import 'package:github_repo_viewer/auth/infrastructure/credentials_storage/credentials_storage.dart';
-import 'package:github_repo_viewer/core/infrastructure/dio_extensions.dart';
-import 'package:github_repo_viewer/core/shared/encoders.dart';
+import 'package:github_repo_viewer/main/infrastructure/dio_extensions.dart';
+import 'package:github_repo_viewer/main/shared/encoders.dart';
+import 'package:http/http.dart' as http;
+import 'package:oauth2/oauth2.dart';
 
 class GithubOAuthHttpClient extends http.BaseClient {
   final httpClient = http.Client();

@@ -1,11 +1,11 @@
 import 'package:dartz/dartz.dart';
-import 'package:github_repo_viewer/core/domain/fresh.dart';
-import 'package:github_repo_viewer/core/infrastructure/network_exceptions.dart';
 import 'package:github_repo_viewer/github/core/domain/github_failure.dart';
 import 'package:github_repo_viewer/github/core/domain/github_repo.dart';
+import 'package:github_repo_viewer/github/repos/core/infrastructure/extensions.dart';
 import 'package:github_repo_viewer/github/repos/starred_repos/infrastructure/starred_repos_local_service.dart';
 import 'package:github_repo_viewer/github/repos/starred_repos/infrastructure/starred_repos_remote_service.dart';
-import 'package:github_repo_viewer/github/repos/core/infrastructure/extensions.dart';
+import 'package:github_repo_viewer/main/domain/fresh.dart';
+import 'package:github_repo_viewer/main/infrastructure/network_exceptions.dart';
 
 class StarredReposRepository {
   final StarredReposRemoteService _remoteService;

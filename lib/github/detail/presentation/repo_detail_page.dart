@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:github_repo_viewer/core/presentation/toasts.dart';
+import 'package:github_repo_viewer/main/presentation/toasts.dart';
 import 'package:github_repo_viewer/github/core/domain/github_repo.dart';
 import 'package:github_repo_viewer/github/core/presentation/no_results_display.dart';
 import 'package:github_repo_viewer/github/core/shared/providers.dart';
@@ -16,9 +16,9 @@ class RepoDetailPage extends ConsumerStatefulWidget {
   final GithubRepo repo;
 
   const RepoDetailPage({
-    Key? key,
+    super.key,
     required this.repo,
-  }) : super(key: key);
+  });
 
   @override
   _RepoDetailPageState createState() => _RepoDetailPageState();
@@ -81,31 +81,32 @@ class _RepoDetailPageState extends ConsumerState<RepoDetailPage> /*with Consumer
               ),
               actions: [
                 state.maybeMap(
-                    orElse: () => Shimmer.fromColors(
-                          baseColor: Colors.grey.shade400,
-                          highlightColor: Colors.grey.shade300,
-                          child: IconButton(
-                            icon: const Icon(Icons.star),
-                            onPressed: null,
-                            disabledColor: Theme.of(context).iconTheme.color,
-                          ),
-                        ),
-                    loadSuccess: (state) {
-                      return IconButton(
-                        icon: Icon(
-                          !state.repoDetail.isFresh
-                              ? MdiIcons.starRemoveOutline
-                              : state.repoDetail.entity?.starred == true
-                                  ? Icons.star
-                                  : Icons.star_outline,
-                        ),
-                        onPressed: !state.repoDetail.isFresh
-                            ? null
-                            : () {
-                                ref.read(repoDetailNotifierProvider.notifier).switchStarredStatus(state.repoDetail.entity!);
-                              },
-                      );
-                    }),
+                  orElse: () => Shimmer.fromColors(
+                    baseColor: Colors.grey.shade400,
+                    highlightColor: Colors.grey.shade300,
+                    child: IconButton(
+                      icon: const Icon(Icons.star),
+                      onPressed: null,
+                      disabledColor: Theme.of(context).iconTheme.color,
+                    ),
+                  ),
+                  loadSuccess: (state) {
+                    return IconButton(
+                      icon: Icon(
+                        !state.repoDetail.isFresh
+                            ? MdiIcons.starRemoveOutline
+                            : state.repoDetail.entity?.starred == true
+                                ? Icons.star
+                                : Icons.star_outline,
+                      ),
+                      onPressed: !state.repoDetail.isFresh
+                          ? null
+                          : () {
+                              ref.read(repoDetailNotifierProvider.notifier).switchStarredStatus(state.repoDetail.entity!);
+                            },
+                    );
+                  },
+                ),
               ],
             ),
             body: state.map(
@@ -120,9 +121,10 @@ class _RepoDetailPageState extends ConsumerState<RepoDetailPage> /*with Consumer
                   );
                 } else {
                   return WebViewWidget(
-                      controller: WebViewController()
-                        ..setJavaScriptMode(JavaScriptMode.unrestricted)
-                        ..setNavigationDelegate(NavigationDelegate(
+                    controller: WebViewController()
+                      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+                      ..setNavigationDelegate(
+                        NavigationDelegate(
                           onNavigationRequest: (navReq) {
                             if (navReq.url.startsWith('data:')) {
                               return NavigationDecision.navigate;
@@ -131,8 +133,10 @@ class _RepoDetailPageState extends ConsumerState<RepoDetailPage> /*with Consumer
                               return NavigationDecision.prevent;
                             }
                           },
-                        ))
-                        ..loadRequest(Uri.dataFromString(
+                        ),
+                      )
+                      ..loadRequest(
+                        Uri.dataFromString(
                           '''
                         <html>
                         <head>
@@ -144,7 +148,9 @@ class _RepoDetailPageState extends ConsumerState<RepoDetailPage> /*with Consumer
                         ''',
                           mimeType: 'text/html',
                           encoding: utf8,
-                        )));
+                        ),
+                      ),
+                  );
                 }
               },
               loadFailure: (_) => Center(

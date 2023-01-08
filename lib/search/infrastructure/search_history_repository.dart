@@ -1,4 +1,4 @@
-import 'package:github_repo_viewer/core/infrastructure/sembast_database.dart';
+import 'package:github_repo_viewer/main/infrastructure/sembast_database.dart';
 import 'package:sembast/sembast.dart';
 
 class SearchHistoryRepository {

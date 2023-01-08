@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:github_repo_viewer/main/infrastructure/sembast_database.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:github_repo_viewer/core/infrastructure/sembast_database.dart';
 
 final sembastProvider = Provider((ref) => SembastDatabase());
 

@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:github_repo_viewer/core/infrastructure/network_exceptions.dart';
-import 'package:github_repo_viewer/core/infrastructure/remote_response.dart';
 import 'package:github_repo_viewer/github/core/infrastructure/github_headers.dart';
 import 'package:github_repo_viewer/github/core/infrastructure/github_headers_cache.dart';
-import 'package:github_repo_viewer/core/infrastructure/dio_extensions.dart';
+import 'package:github_repo_viewer/main/infrastructure/dio_extensions.dart';
+import 'package:github_repo_viewer/main/infrastructure/network_exceptions.dart';
+import 'package:github_repo_viewer/main/infrastructure/remote_response.dart';
 
 class RepoDetailRemoteService {
   final Dio _dio;

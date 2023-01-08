@@ -1,11 +1,11 @@
 import 'package:dartz/dartz.dart';
-import 'package:github_repo_viewer/core/domain/fresh.dart';
-import 'package:github_repo_viewer/core/infrastructure/network_exceptions.dart';
 import 'package:github_repo_viewer/github/core/domain/github_failure.dart';
 import 'package:github_repo_viewer/github/detail/domain/github_repo_detail.dart';
 import 'package:github_repo_viewer/github/detail/infrastructure/github_repo_detail_dto.dart';
 import 'package:github_repo_viewer/github/detail/infrastructure/repo_detail_local_service.dart';
 import 'package:github_repo_viewer/github/detail/infrastructure/repo_detail_remote_service.dart';
+import 'package:github_repo_viewer/main/domain/fresh.dart';
+import 'package:github_repo_viewer/main/infrastructure/network_exceptions.dart';
 
 class RepoDetailRepository {
   final RepoDetailLocalService _localService;

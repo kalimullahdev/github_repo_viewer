@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:github_repo_viewer/core/infrastructure/remote_response.dart';
+import 'package:github_repo_viewer/main/infrastructure/remote_response.dart';
 import 'package:github_repo_viewer/github/core/infrastructure/github_headers_cache.dart';
 import 'package:github_repo_viewer/github/core/infrastructure/github_repo_dto.dart';
 import 'package:github_repo_viewer/github/core/infrastructure/pagination_config.dart';
@@ -7,9 +7,9 @@ import 'package:github_repo_viewer/github/repos/core/infrastructure/repos_remote
 
 class StarredReposRemoteService extends ReposRemoteService {
   StarredReposRemoteService(
-    Dio dio,
-    GithubHeadersCache headersCache,
-  ) : super(dio, headersCache);
+    super.dio,
+    super.headersCache,
+  );
 
   Future<RemoteResponse<List<GithubRepoDTO>>> getStarredReposPage(
     int page,

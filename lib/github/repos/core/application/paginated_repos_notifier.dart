@@ -1,11 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:github_repo_viewer/core/domain/fresh.dart';
 import 'package:github_repo_viewer/github/core/domain/github_failure.dart';
 import 'package:github_repo_viewer/github/core/domain/github_repo.dart';
 import 'package:github_repo_viewer/github/core/infrastructure/pagination_config.dart';
-import 'package:github_repo_viewer/github/repos/starred_repos/infrastructure/starred_repos_repository.dart';
+import 'package:github_repo_viewer/main/domain/fresh.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 part 'paginated_repos_notifier.freezed.dart';
 

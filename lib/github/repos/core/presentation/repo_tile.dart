@@ -1,16 +1,16 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:github_repo_viewer/core/presentation/routes/app_router.gr.dart';
+import 'package:github_repo_viewer/main/presentation/routes/app_router.gr.dart';
 import 'package:github_repo_viewer/github/core/domain/github_repo.dart';
 
 class RepoTile extends StatelessWidget {
   final GithubRepo repo;
 
   const RepoTile({
-    Key? key,
+    super.key,
     required this.repo,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

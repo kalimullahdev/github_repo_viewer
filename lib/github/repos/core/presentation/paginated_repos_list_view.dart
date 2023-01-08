@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
-import 'package:github_repo_viewer/core/presentation/toasts.dart';
+import 'package:github_repo_viewer/main/presentation/toasts.dart';
 import 'package:github_repo_viewer/github/core/presentation/no_results_display.dart';
 import 'package:github_repo_viewer/github/repos/core/application/paginated_repos_notifier.dart';
 import 'package:github_repo_viewer/github/repos/core/presentation/failure_repo_tile.dart';
@@ -14,11 +14,11 @@ class PaginatedReposListView extends StatefulWidget {
   final String noResultsMessage;
 
   const PaginatedReposListView({
-    Key? key,
+    super.key,
     required this.paginatedReposNotifierProvider,
     required this.getNextPage,
     required this.noResultsMessage,
-  }) : super(key: key);
+  });
 
   @override
   _PaginatedReposListViewState createState() => _PaginatedReposListViewState();
@@ -80,9 +80,9 @@ class _PaginatedReposListViewState extends State<PaginatedReposListView> {
 
 class _PaginatedListView extends StatelessWidget {
   const _PaginatedListView({
-    Key? key,
+    super.key,
     required this.state,
-  }) : super(key: key);
+  });
 
   final PaginatedReposState state;
 

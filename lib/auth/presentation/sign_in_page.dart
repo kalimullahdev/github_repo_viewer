@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:github_repo_viewer/auth/shared/providers.dart';
-import 'package:github_repo_viewer/core/presentation/routes/app_router.gr.dart';
+import 'package:github_repo_viewer/main/presentation/routes/app_router.gr.dart';
 
 class SignInPage extends ConsumerWidget {
-  const SignInPage({Key? key}) : super(key: key);
+  const SignInPage({super.key});
 
   @override
-  Widget build(BuildContext context, ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       body: SafeArea(
         child: Center(
